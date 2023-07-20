@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Handlee&family=Montserrat&family=Roboto&family=Space+Mono&display=swap%27');
+
+:root {
+    --primary-color: #222831;
+    --primary-color-alt: #393e46;
+    --secondary-color: #495c83;
+    --secondary-color-alt: #7a86b6;
+    --accent-color: #d1274b;
+    --accent-color-alt: #d1274b;
+    --background-color: #eee;
+    --light-color: #fff4e4;
+    --dark-color: #222831;
+
+--card-overlay: rgba(0, 0, 0, 0.5);
+
+    --main-header-font: 'Bebas Neue', cursive; 
+    --main-title-font: 'Montserrat', sans-serif; 
+    --alt-theme-font: 'Roboto', sans-serif;
+    --alt-button-font: 'Space Mono', monospace; 
+    --main-handwriting-font: 'Handlee', cursive;
+
+
+
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+
+    margin: 0;
+    padding: 0;
+
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--background-color);
+}
+
+body > section{
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+section#landing-page {
+    width: 100%;
+    min-height: 100vh;
+
+    flex-flow: wrap column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--primary-color);
+
+    border-radius: 0 0 12px 12px;
+}
+
+section#landing-page > h1{
+    font-family: var(--main-header-font);
+    font-size: 4rem;
+    color: var(--light-color);
+
+    padding-bottom: 10px;
+}
+
+section#landing-page div.botones{
+    padding: 10px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+section#landing-page div.botones a{
+    padding: 10px 20px;
+    border-radius: 0 5px 0 5px;
+
+    color: var(--light-color);
+    font-size: 1rem;
+    font-family: var(--alt-button-font);
+
+    background-color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* DRAFT SECTION */
+
+section#Booster-draft-section{
+
+    width: 100%;
+    height: auto;
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 55px auto;
+
+    grid-template-areas: "header header"
+                         "navbar content";
+}
+
+article.draft-title {
+    grid-area: header;
+    height: 55px;
+    background: var(--accent-color);
+
+    padding: 0.8rem;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.draft-title > h2{
+    font-family: var(--main-title-font);
+    text-align: center;
+
+    color: var(--light-color);
+}
+
+.controls-container{
+    width: 100%;
+    height: auto;
+    background: var(--primary-color-alt);
+
+    margin-top: 20px;
+    border-radius: 12px 12px 12px 12px;
+
+    position: sticky;
+    top: 10px;
+}
+
+.draft-control-pad{
+    padding: 15px;
+    font-size: 16px;
+
+    color: var(--light-color);
+    font-family: var(--alt-theme-font);
+}
+
+.draft-control-pad > p{
+    margin-top: 10px;
+}
+
+div.botones-draft{
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+div.botones-draft button{
+    margin: 3px;
+    padding: 8px 8px;
+    border-radius: 5px 0 5px 0;
+
+    color: var(--light-color);
+    font-size: 15px;
+    font-family: var(--alt-theme-font);
+
+    background-color: var(--accent-color);
+    text-decoration: none;
+
+    cursor: pointer;
+    border: 0;
+}
+
+section#Booster-draft-section main.cards-template img,
+section#Deck main.deck-contenedor  .cards-wrapper-deck img{
+    width: 300px;
+    height: 400px;
+}
+
+section#Booster-draft-section main.cards-template .card-element:hover{
+    -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out; 
+}
+
+section#Booster-draft-section main.cards-template,
+section#Deck main.deck-contenedor .cards-wrapper-deck{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+section#Deck main.deck-contenedor .cards-template-deck{
+    padding: 20px 10px;
+}
+
+section#Booster-draft-section main.cards-template .card-element,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#Booster-draft-section main.cards-template .card-element > .card-details,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element > .card-details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    background-color: var(--card-overlay);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--light-color);
+}
+
+section#Booster-draft-section main.cards-template .card-element:hover > .card-details,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element:hover > .card-details{
+    opacity: 1;
+    z-index: 1;
+}
+
+section#Booster-draft-section main.cards-template .card-element > .card-details .type,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element > .card-details .type{
+    align-self: flex-end;
+}
+
+section#Booster-draft-section main.cards-template .card-element > .card-details > div,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element > .card-details > div{
+    text-align: center;
+}
+
+section#Booster-draft-section main.cards-template .card-element > .card-details .name,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element > .card-details .name{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+section#Booster-draft-section main.cards-template .card-element > .card-details .btn-wrapper,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element > .card-details .btn-wrapper{
+    display: flex;
+    flex: 1;
+
+    align-items: center;
+    justify-content: center;
+}
+
+section#Booster-draft-section main.cards-template .card-element > .card-details .add-deck,
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element > .card-details .del-card{
+    border: none;
+    background-color: rgb(80, 182, 69);
+    
+    padding: 25px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element > .card-details .del-card{
+    background-color: rgb(207, 42, 58);
+}
+
+section#Deck main.deck-contenedor .cards-wrapper-deck .card-element:hover{
+    -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out; 
+}
+/* Deck */
+section#Deck {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 55px auto;
+
+    grid-template-areas: "header header"
+    "navbar content";
+}
+section#Deck div.deck {
+    grid-area: header;
+
+    background: var(--accent-color);
+    font-family: var(--main-title-font);
+    padding: 0.8rem;
+    width: 100%;
+    height: 55px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+div > h2{
+    text-align: center;
+    color: var(--light-color);
+}
+
+section#Deck main.deck-contenedor h2{
+    color: var(--alt-theme-font);
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    background: var(--primary-color-alt);
+
+    margin-top: 20px;
+    border-radius: 12px 12px 12px 12px;
+
+    position: sticky;
+    top: 10px;
+}
+
+.deck-action{
+    padding: 15px;
+    font-size: 16px;
+
+    color: var(--light-color);
+
+    font-family: var(--alt-theme-font);
+}
+
+div.buttons{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+}
+
+div.buttons button{
+    margin: 3px;
+    padding: 6px 8px;
+
+    border-radius: 5px 0 5px 0;
+
+    color: var(--light-color);
+    font-size: 15px;
+    font-family: var(--alt-theme-font);
+
+    background-color: var(--accent-color);
+    text-decoration: none;
+
+    cursor: pointer;
+    border: 0;
+}
+
+main.deck-contenedor h1{
+    font-family: var(--main-title-font);
+    padding: 20px;
+    text-align: center;
+}
+
+main.deck-contenedor {
+    margin-top: 1.5rem;
+}
+
+.btn-flotante {
+	font-size: 10px; 
+	font-weight: bold; 
+	color: var(--light-color);
+	border-radius: 5px; 
+	background: var(--accent-color); 
+	padding: 18px 30px; 
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;
+}
+.btn-flotante:hover {
+	background: var(--secondary-color-alt);
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 1024px) {
+    body > #Booster-draft-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    body > #Deck{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .controls-container , .container{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    section#landing-page > h1{
+        font-size: 2.5rem;
+
+        padding-bottom: 10px;
+    }
+
+    section#landing-page div.botones a{
+        padding: 3px 5px;
+        font-size: 0.8rem;
+    }
+
+    body > #Booster-draft-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    body > #Deck{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .controls-container , .container{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

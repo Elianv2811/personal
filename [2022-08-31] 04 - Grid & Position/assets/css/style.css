@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Montserrat&family=Raleway&family=Roboto&display=swap");
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: "Roboto", sans-serif;
+}
+
+body > section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 1rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  background: #d8f0dd;
+}
+
+.carta {
+  width: 500px;
+
+  padding: 5rem;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  border-radius: 1rem;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+}
+
+.grid {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 20px 20px 20px;
+  grid-template-columns: 20px 20px 20px;
+
+  grid-template-areas:
+    "square1 square2 square3"
+    "square4 square5 square6"
+    "square7 square8 square9";
+}
+
+.grid.izq {
+  top: -1.5rem;
+  left: -1.5rem;
+}
+
+.grid.der {
+  top: -1.5rem;
+  right: -1.5rem;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.grid.izqabajo {
+  bottom: -1.5rem;
+  left: -1.5rem;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.grid.derabajo {
+  bottom: -1.5rem;
+  right: -1.5rem;
+  -webkit-transform: rotate(-270deg);
+  -moz-transform: rotate(-270deg);
+  -ms-transform: rotate(-270deg);
+  transform: rotate(-270deg);
+}
+
+div > div .sq1 {
+  background-color: #92c28f;
+  border-radius: 60% 0% 0% 0%;
+  grid-area: square1;
+}
+div > div .sq2 {
+  background-color: #92c28f;
+  grid-area: square2;
+}
+div > div .sq3 {
+  background-color: #db98e3;
+  border-radius: 0% 60% 0% 0%;
+  grid-area: square3;
+}
+div > div .sq4 {
+  background-color:  #de6da0;
+  grid-area: square4;
+}
+div > div .sq5 {
+  background-color: white;
+  grid-area: square5;
+}
+div > div .sq6 {
+  background-color: #db98e3;
+  grid-area: square6;
+}
+div > div .sq7 {
+  background-color: #de6da0;
+  border-radius: 0% 0% 0% 60%;
+  grid-area: square7;
+}
+div > div .sq8 {
+  background-color: #dece73;
+  grid-area: square8;
+}
+div > div .sq9 {
+  background-color: #dece73;
+  border-radius: 0% 0% 60% 0%;
+  grid-area: square9;
+}

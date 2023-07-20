@@ -1,0 +1,71 @@
+:root{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body > section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #eee;
+
+    padding: 1rem;
+}
+
+#orden_elementos{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 0 350px;
+}
+
+.carta h3{
+    text-align: center;
+}
+
+.carta{
+    background: white;
+    padding: 10px 10px;
+    width: 300px;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 5px;
+    border-radius: 0.5rem;
+
+    text-align: justify;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+
+}
+
+.boton-1{
+    background-color: red;
+    color: white;
+    border-radius: 0 5px 0 5px;
+    width: 100%;
+    cursor:pointer;
+
+    border: black solid 1px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.boton-2{
+    background-color: green;
+    color: white;
+    border-radius:0 5px 0 5px;
+    width: 100%;
+    cursor: pointer;
+
+    border: black solid 1px;
+    padding: 10px;
+    margin: 5px;
+}
